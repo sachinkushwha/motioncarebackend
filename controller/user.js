@@ -34,9 +34,7 @@ exports.Doctor = (req, res, next) => {
 
 exports.Appointment = async (req, res, next) => {
   const BOT_TOKEN = process.env.BOT_TOKEN;
-  console.log(BOT_TOKEN);
   const CHAT_ID = process.env.CHAT_ID;
-  console.log(CHAT_ID);
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
   const { name, email, phone, service, date } = req.body;
