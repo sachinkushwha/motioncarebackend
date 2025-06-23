@@ -1,4 +1,5 @@
 const Appoint = require('../model/appointment');
+const checkjwt=require('../checkjwt');
 exports.Service = (req, res, next) => {
   const services = [
     "Traditional Cupping Therapy",
@@ -50,3 +51,7 @@ exports.Appointment = async (req, res, next) => {
 
   res.status(200).json("form submited sucessfuly");
 }
+
+exports.Booked=(checkjwt,(req,res)=>{
+  res.status(200).json('booked data aa gya');
+})
