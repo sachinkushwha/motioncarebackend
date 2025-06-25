@@ -57,7 +57,7 @@ exports.Appointment = (req, res, next) => {
   })
   
 
-  res.status(200).json(`Form submited sucessfuly\n Your bookin id is : ${bookingid} .save it.`);
+  res.status(200).json(`Thank You For Booking\nYour Appointment booked successfully\n Your booking id is : ${bookingid} .save it/take a screenshot.`);
 }
 
 // exports.Booked=(checkjwt,(req,res)=>{
