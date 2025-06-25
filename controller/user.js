@@ -33,25 +33,27 @@ exports.Doctor = (req, res, next) => {
   res.status(200).json(doc);
 }
 
-exports.Appointment = async (req, res, next) => {
+exports.Appointment = (req, res, next) => {
   const BOT_TOKEN = process.env.BOT_TOKEN;
   const CHAT_ID = process.env.CHAT_ID;
+  const bookingid=Math.floor(Math.random()*(9999999-1000000+1))+1000000;
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
   const { name, email, phone, service, date } = req.body;
-  const appoint = new Appoint({ name, email, phone, service, date });
-  await appoint.save();
+  // const appoint = new Appoint({ name, email, phone, service, date });
+  // await appoint.save();
   const response =  fetch(url, {
     method: 'POST', headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
       chat_id: CHAT_ID,
-      text:`New Appointment:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nDate: ${date}`
+      text:`New Appointment:\nBookinId: ${bookingid}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nDate: ${date}`
     })
   })
+  
 
-  res.status(200).json("form submited sucessfuly");
+  res.status(200).json(`Form submited sucessfuly\n Your bookin id is : ${bookingid} .save it.`);
 }
 
-exports.Booked=(checkjwt,(req,res)=>{
-  res.status(200).json('booked data aa gya');
-})
+// exports.Booked=(checkjwt,(req,res)=>{
+//   res.status(200).json('booked data aa gya');
+// })
