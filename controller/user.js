@@ -1,14 +1,20 @@
 const Appoint = require('../model/appointment');
 const checkjwt=require('../checkjwt');
 exports.Service = (req, res, next) => {
-  const services = [
-    "Traditional Cupping Therapy",
-    "Physiotherapy for Back Pain ",
-    "Joint Mobilization",
-    "Sports Injury Recovery",
-    "Post-Surgery Rehab",
-    "Home Visit Consultation",
-    "Dry Needling Therapy"
+  const services = [{
+    service:"Traditional Cupping Therapy",dis:"Traditional Cupping Therapy se paayein sukoon aur behtar sehat.Hamaare expert therapists aapke ghar par hi personalized care dete hain."},
+
+    {service:"Dry Needling Therapy",dis:"Muscle pain aur trigger points ke liye miley instant relief.Dry needling therapy ab available hai aapke ghar par — safe aur effective."},
+    
+    {service:"Physiotherapy for Back Pain",dis:"Back pain ko ignore na karein, uska solution chunein.Experienced physiotherapists se paayein personalized treatment aapke doorstep par."},
+
+    {service:"Joint Mobilization",dis:"Joint stiffness aur movement restriction ka paayein behtareen solution.Hamare experts ke saath karein joint mobilization therapy ghar baithe hi."},
+
+    {service:"Sports Injury Recovery",dis:"Choti ya badi sports injury ho — recovery hamare experts ke saath possible hai.Ghar par hi miley professional physiotherapy tailored to your athletic needs."},
+
+    {service:"Home Visit Consultation",dis:"Clinic jaane ki zarurat nahi — expert care ab aapke ghar par.Hamari home visit consultation service se paayein rahat bina travel ke."},
+
+    
   ];
   res.status(200).json(services);
 }
